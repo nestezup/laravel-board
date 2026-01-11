@@ -1,8 +1,8 @@
 services:
   app:
     image: nestezup/laravel-board-app:latest
-    ports:
-      - '80:80'
+    expose:
+      - "80"
     environment:
       - APP_NAME=${APP_NAME:-Laravel}
       - APP_ENV=${APP_ENV:-production}
