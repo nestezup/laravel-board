@@ -31,8 +31,8 @@ COPY . .
 # Configure git safe directory
 RUN git config --global --add safe.directory /var/www/html
 
-# Install dependencies
-RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
+# Install dependencies (including dev for education purpose)
+RUN composer install --optimize-autoloader --no-interaction --no-scripts
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html \
