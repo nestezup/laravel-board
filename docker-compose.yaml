@@ -3,6 +3,8 @@ services:
     image: nestezup/laravel-board-app:latest
     ports:
       - '65180:80'
+    networks:
+      - coolify
     environment:
       - APP_NAME=${APP_NAME:-Laravel}
       - APP_ENV=${APP_ENV:-production}
@@ -26,3 +28,7 @@ services:
 volumes:
   app-storage:
     driver: local
+
+networks:
+  coolify:
+    external: true
